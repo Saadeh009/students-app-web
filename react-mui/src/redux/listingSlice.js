@@ -50,7 +50,6 @@ const listingSlice = createSlice({
     },
     extraReducers: {
         [getListingsAsync.fulfilled]: (state, action) =>{
-            console.log(action.payload?.data)
             return action.payload?.data
         } ,
         [getListingsAsync.rejected]: (state, action) => "error finding listings",
@@ -61,7 +60,6 @@ const listingSlice = createSlice({
         },
         [isFavoriteAsync.fulfilled]: (state, action) => {
             const isFavoriteIndex = state.findIndex((l) => l.id === action.payload.listing.id)
-            console.log("FAVORITE ACTION PAYLOAD: ", action.payload)
             state[isFavoriteIndex].isFavorite = action.payload.listing.isFavorite
         },
     }

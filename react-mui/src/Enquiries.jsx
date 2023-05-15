@@ -13,7 +13,6 @@ const Enquiries = () => {
       dispatch(getListingsAsync())
     }
   const listings = useSelector(l => l.listings)
-  console.log(listings);
   return (
     <>
     <Box sx={{p:1}}>
